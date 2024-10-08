@@ -1,15 +1,12 @@
-import React from 'react'
+import { notFound } from "next/navigation";
 
 interface Props {
-    params: { id: number }
+  params: { id: number };
 }
 
-const UserDetrailPage = ({params: {id}}: Props) => {
-  return (
-    
-    <div>UserDetrailPage - {id}</div>
-  )
-}
+const UserDetrailPage = ({ params: { id } }: Props) => {
+  if (id > 10) notFound();
+  return <div>UserDetrailPage - {id}</div>;
+};
 
-
-export default UserDetrailPage
+export default UserDetrailPage;
